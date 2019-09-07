@@ -25,3 +25,13 @@ sudo apt-get update
 sudo apt-get install virtualbox-5.2
 
 # zsh
+apt install zsh
+chsh -s /usr/bin/zsh root
+
+# git
+apt install wget git
+
+# oh-my-zsh
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+cp .zshrc ~/.zshrc
+source ~/.zshrc
