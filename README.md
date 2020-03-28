@@ -3,8 +3,9 @@
 2. `sudo apt-get update && sudo apt-get upgrade -y`
 3. `sudo apt install git -y`
 4. `git clone https://github.com/TheHumanGiraffe/setupscript`
-5. ./setupscript.sh
-6. Follow the customization instructions at the end, and reboot to get zsh working properly
+5. chmod +x setupsecript.sh
+6. ./setupscript.sh
+7. Follow the customization instructions at the end, and reboot to get zsh working properly
 
 some things to do after installation
 - install these extensions
