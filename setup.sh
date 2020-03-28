@@ -44,7 +44,7 @@ sudo apt-get install balena-etcher-electron -y
 
 
 # get rid of the shit
-sudo apt-get purge thunderbird -y
+sudo apt-get purge thunderbird rhythmbox -y
 
 echo "############################################"
 echo "############################################"
