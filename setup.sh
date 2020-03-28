@@ -43,6 +43,11 @@ sudo apt-key adv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 379CE19
 sudo apt-get update
 sudo apt-get install balena-etcher-electron -y
 
+#clipboard manager
+sudo add-apt-repository ppa:noobslab/indicators -y
+sudo apt update
+sudo apt install copyq -y
+
 
 # get rid of the shit
 sudo apt-get purge thunderbird rhythmbox -y
