@@ -1,40 +1,59 @@
-#!/bin/sh
+#!/bin/bash
+sudo apt-get install git -y
 
-# standard updates and upgrades
-sudo apt-get update && sudo apt-get upgrade;
+sudo apt-get update
+sudo apt-get upgrade -y
 
-#discord
-sudo apt-get install discord
+#tweaks 
+sudo apt install gnome-tweaks -y
 
-#spotify
-curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -;
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list;
-sudo apt-get update && sudo apt-get install spotify-client;
-
-#vscode
-sudo apt-get install code
-
-#intellij
-sudo snap install intellij-idea-community --classic
+# apps 
+sudo snap install code --classic
+sudo snap install spotify
+sudo snap install discord
+sudo snap install docker
+sudo snap install vlc
+sudo snap install gimp
 
 # virtualbox
-wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
-wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
-sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian xenial contrib"
-sudo apt-get update
-sudo apt-get install virtualbox-5.2
+sudo apt-get install virtualbox -y
 
-# zsh
-apt install zsh
-chsh -s /usr/bin/zsh root
+# #zsh
+sudo apt install zsh curl -y
+chsh -s $(which zsh)
 
-# git
-apt install wget git
-
-# oh-my-zsh
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+# # oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 cp .zshrc ~/.zshrc
-source ~/.zshrc
 
-#java 
-apt-get install default-jdk
+# theme
+sudo add-apt-repository ppa:noobslab/themes -y
+sudo apt-get update
+sudo apt-get install arc-theme -y
+
+# icons
+sudo add-apt-repository -u ppa:snwh/ppa -y
+sudo apt install paper-icon-theme -y
+
+
+# etcher
+echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
+sudo apt-key adv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 379CE192D401AB61
+sudo apt-get update
+sudo apt-get install balena-etcher-electron -y
+
+
+# get rid of the shit
+sudo apt-get purge thunderbird -y
+
+echo "############################################"
+echo "############################################"
+echo "############################################"
+echo ""
+echo "go into tweak and update the icons and theme"
+echo ""
+echo "sign into discord/spotify/firefox"
+echo ""
+echo "install extensions on vscode"
+echo ""
+echo "restart to apply zsh update "
