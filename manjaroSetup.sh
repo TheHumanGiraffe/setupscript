@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # general updates
-pacman -Syu
+sudo pacman -Syu
 
 # apps I like
 sudo pacman -S zsh discord code virtualbox git --noconfirm
