@@ -6,6 +6,7 @@ sudo apt-get upgrade -y
 
 #tweaks 
 sudo apt install gnome-tweaks -y
+sudo apt-get install chrome-gnome-shell -y
 
 # apps 
 sudo snap install code --classic

@@ -7,9 +7,18 @@
 6. ./setupscript.sh
 7. Follow the customization instructions at the end, and reboot to get zsh working properly
 
-some things to do after installation
-- install these extensions
-  - https://extensions.gnome.org/extension/1485/workspace-matrix/
-- sign into everything mentioned in the script
-- switch left ctrl and alt in tweaks
-- other???
+
+# Post script items
+## Gnome extensions
+- swap left ctrl and left alt in tweaks
+- `https://extensions.gnome.org/extension/1485/workspace-matrix/`
+
+## Favorites bar
+- Firefox
+- Files
+- Discord
+- Spotify
+- Code
+- Terminal
+
+## Should be all done and ready to sign in to stuff now :)
