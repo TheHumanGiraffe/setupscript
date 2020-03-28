@@ -51,15 +51,3 @@ sudo apt install copyq -y
 
 # get rid of the shit
 sudo apt-get purge thunderbird rhythmbox -y
-
-echo "############################################"
-echo "############################################"
-echo "############################################"
-echo ""
-echo "go into tweak and update the icons and theme"
-echo ""
-echo "sign into discord/spotify/firefox"
-echo ""
-echo "install extensions on vscode"
-echo ""
-echo "restart to apply zsh update "

@@ -5,13 +5,18 @@
 4. `git clone https://github.com/TheHumanGiraffe/setupscript`
 5. chmod +x setupsecript.sh
 6. ./setupscript.sh
-7. Follow the customization instructions at the end, and reboot to get zsh working properly
+7. reboot to get zsh working properly
 
 
 # Post script items
 ## Gnome extensions
 - swap left ctrl and left alt in tweaks
 - `https://extensions.gnome.org/extension/1485/workspace-matrix/`
+
+## colors
+- fix terminal theme
+- set desktop wallpaper
+- set lockscreen wallpaper
 
 ## Favorites bar
 - Firefox
