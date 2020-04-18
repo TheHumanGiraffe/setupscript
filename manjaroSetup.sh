@@ -1,27 +1,31 @@
-#!/bin/bash
+# manjaro setup
 
-# general updates
-sudo pacman -Syu --noconfirm
+#upgrade all
+sudo pacman -Syyu --noconfirm
 
-# apps I like
-sudo pacman -S zsh discord code virtualbox git --noconfirm
 
-# zsh
-wget --no-check-certificate http://install.ohmyz.sh -O - | sh
-chsh -s /usr/bin/zsh
-cp .zshrc ~/.zshrc
+# install the stuff I want that doesn't need snap
+sudo pacman -s code docker vlc gimp discord virtualbox signal-dekstop --noconfirm
 
-# snap
-git clone https://aur.archlinux.org/snapd.git
-cd snapd
-makepkg -si
-sudo systemctl enable --now snapd.socket
-sudo ln -s /var/lib/snapd/snap /snap
+# set up snap
+sudo pacman -S snapd --noconfirm
+sudo systemctl enable snapd
+snap --version
 
-# other stuff I like that requires snap
+# apps 
 sudo snap install spotify
-sudo snap install signal-desktop
 
+# # make docker play nice without sudo
+# sudo groupadd docker
+# sudo gpasswd -a $USER docker
+# sudo service docker restart
+# sudo service docker.io restart
 
+# set up i3 gaps
+sudo pacman -S i3-gaps i3lock i3status --noconfirm
 
-
+# Install zsh & oh-my-zsh
+sudo pacman -S git zsh --noconfirm 
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+chsh -s $(which zsh)
+echo "logout to apply zsh update"
