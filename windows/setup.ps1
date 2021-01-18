@@ -1,24 +1,50 @@
-$chocolateyAppList = "firefox,7zip,vlc,vscode,spotify,adobereader,autohotkey,bitwarden"
-$work = Read-Host 
-ShouldInstall("work apps", "awscli,slack,zoom")
-ShouldInstall("programming stuff", "python,git,golang,microsoft-windows-terminal,docker,docker-cli,docker-compose,wsl,wsl-ubuntu-2004,putty,wireshark,etcher")
-ShouldInstall("creative apps", "libreoffice-fresh,gimp")
-ShouldInstall("gaming stuff", "steam,discord,uplay")
+$global:chocolateyAppList = @('firefox',
+                              '7zip',
+                              'vlc',
+                              'vscode',
+                              'spotify',
+                              'adobereader',
+                              'autohotkey',
+                              'bitwarden')
 
-function ShouldInstall(){
-    [CmdletBinding()]
-    param (
-        [Parameter(Mandatory)]
-        [string]$prompt
-        [string]$appList
+$work_apps = @('awscli',
+            'slack',
+            'zoom')
 
-    $response = Read-Host "Do you want to install $prompt?: $appList"
-    if ($response -eq 'y'){
-        $chocolateyAppList += ",$appList"
+$programming = @('python',
+              'git',
+              'golang',
+              'microsoft-windows-terminal', 
+              'docker', 
+              'docker-cli', 
+              'docker-compose', 
+              'wsl', 
+              'wsl-ubuntu-2004', 
+              'putty', 
+              'wireshark', 
+              'etcher')
+
+$creative = @('steam',
+           'discord',
+           'uplay')
+
+function main(){
+    ShouldInstall "work apps" $work_apps
+    ShouldInstall "programming" $programming
+    ShouldInstall "creative" $creative
+    ForEach ($PackageName in $global:chocolateyAppList){
+        # Write-host "choco install $PackageName -y"
+        choco install $PackageName -y
     }
-    )
-
 }
 
+function ShouldInstall($prompt, $appList){
+    $response = Read-Host -Prompt "install $prompt`? [y\n] $appList"
+    if ($response -eq 'y'){
+        $global:chocolateyAppList += $appList
+    }
+}
+
+main
 # issues: 
 # sync.com
